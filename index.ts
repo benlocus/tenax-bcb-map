@@ -1,6 +1,12 @@
-import { serve } from "https://deno.land/std/http/mod.ts";
+import { serveTls } from "https://deno.land/std/http/server.ts";
 
 const BASE_PATH = ".";
+const options = {
+  hostname: "34.125.86.118",
+  port: 8080,
+  certFile: "./34.125.86.118.pem",
+  keyFile: "./34.125.86.118-key.pem",
+};
 
 const reqHandler = async (req: Request) => {
   const filepath = BASE_PATH + new URL(req.url).pathname;
@@ -19,4 +25,4 @@ const reqHandler = async (req: Request) => {
   return new Response(body);
 };
 
-serve(reqHandler, { port: 8080 });
+serveTls(reqHandler, options);
