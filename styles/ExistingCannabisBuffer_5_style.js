@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_Non_Public_Schools_4 = function(feature, resolution){
+var style_ExistingCannabisBuffer_5 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,15 +21,7 @@ var style_Non_Public_Schools_4 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        image: new ol.style.Icon({
-                  imgSize: [579.997, 579.997],
-                  scale: 0.025862202735531394,
-                  anchor: [7, 7],
-                  anchorXUnits: "pixels",
-                  anchorYUnits: "pixels",
-                  rotation: 0.0,
-                  src: "styles/city_building.svg"
-            }),
+        stroke: new ol.style.Stroke({color: 'rgba(35,35,35,0.2)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}),fill: new ol.style.Fill({color: 'rgba(114,155,111,0.2)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
